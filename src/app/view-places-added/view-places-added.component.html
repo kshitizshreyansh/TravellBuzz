@@ -1,0 +1,14 @@
+<p>places added are:</p>
+<div class="container-fluid shadow p-2 bg-white rounded mb-5" style="margin-top:4px" *ngFor="let i of productDisplay">
+
+    
+    <div class="container-fluid card border-0" style=" margin-top:15px">
+        <div class="row">
+            <div class="col-2" *ngFor="let j of i.ProductSchema">
+                <div class="d-flex flex-column align-items-center ">
+                    <h6 class="card-title">{{j.title}}</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

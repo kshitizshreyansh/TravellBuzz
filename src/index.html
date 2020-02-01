@@ -4,10 +4,94 @@
   <meta charset="utf-8">
   <title>ProV1</title>
   <base href="/">
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="/path/to/jquery.flip.min.js"></script> -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 </head>
 <body>
   <app-root></app-root>
+  <script>
+    function ani() {
+        document.querySelector("#sign-in-div").classList.remove("animate-appear-left");
+
+        document.querySelector("#sign-in-div").classList.add("animate-right");
+        document.querySelector("#form-sign-up-div").classList.add("animate-left");
+
+        setTimeout(myFunction, 600);
+
+        function myFunction() {
+            document.querySelector("#sign-in-div").classList.remove("d-flex");
+            document.querySelector("#sign-in-div").classList.add("d-none");
+
+            document.querySelector("#form-sign-up-div").classList.remove("d-flex");
+            document.querySelector("#form-sign-up-div").classList.add("d-none");
+
+            document.querySelector("#sign-in-div").classList.remove("animate-right");
+            document.querySelector("#form-sign-up-div").classList.remove("animate-left");
+
+
+            document.querySelector("#form-sign-in-div").classList.remove("d-none");
+            document.querySelector("#form-sign-in-div").classList.add("d-flex");
+            document.querySelector("#sign-up-div").classList.remove("d-none");
+            document.querySelector("#sign-up-div").classList.add("d-flex");
+
+        }
+
+        document.querySelector("#sign-up-div").classList.add("animate-appear-right");
+
+
+    };
+
+    function ani2() {
+        document.querySelector("#sign-up-div").classList.remove("animate-appear-right");
+        document.querySelector("#sign-up-div").classList.add("animate-left");
+        document.querySelector("#form-sign-in-div").classList.add("animate-right");
+
+        setTimeout(myFunction2, 600);
+
+        function myFunction2() {
+
+            document.querySelector("#sign-up-div").classList.remove("animate-left");
+            document.querySelector("#form-sign-in-div").classList.remove("animate-right");
+
+            document.querySelector("#sign-up-div").classList.add("d-none");
+            document.querySelector("#sign-up-div").classList.remove("d-flex");
+
+            document.querySelector("#form-sign-in-div").classList.add("d-none");
+            document.querySelector("#form-sign-in-div").classList.remove("d-flex");
+
+
+            document.querySelector("#sign-in-div").classList.add("d-flex");
+            document.querySelector("#sign-in-div").classList.remove("d-none");
+
+            document.querySelector("#form-sign-up-div").classList.add("d-flex");
+            document.querySelector("#form-sign-up-div").classList.remove("d-none");
+
+        }
+
+        document.querySelector("#sign-in-div").classList.add("animate-appear-left");
+
+    }
+
+    function ani3(){
+        $('.cards').toggleClass('flipped');
+    }
+
+    function disappear() {
+        document.querySelector("#disappearLabel").classList.add("d-none");
+    }
+
+    
+</script>
+
 </body>
 </html>

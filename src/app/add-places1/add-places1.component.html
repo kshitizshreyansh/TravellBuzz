@@ -1,0 +1,27 @@
+<app-admin-nav-bar></app-admin-nav-bar>
+<div class="container" style="margin-top: 100px;padding-left: 250px;padding-right: 250px;" align="center">
+    <form [formGroup]="form" (submit)=onSaveProduct()>
+        <div class="form-row m-3">
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Preference Name" formControlName="preference">
+            </div>
+        </div>
+        <div class="form-row m-3">
+            <div class="col">
+                <textarea rows="2" type="text" class="form-control" placeholder="Description" formControlName="description"></textarea>
+            </div>
+        </div>
+        
+        <div class="form-row m-3">
+            <div class="col">
+                <input type="text" class="form-control" placeholder="image URL" formControlName="images">
+            </div>
+        </div>
+        
+
+        <div class="form-row m-3 justify-content-center">
+            <button type="submit" class="btn btn-lg text-white" style="background-color: midnightblue">Add Place</button>
+        </div>
+
+    </form>
+</div>
