@@ -1,27 +1,101 @@
 <app-admin-nav-bar></app-admin-nav-bar>
 <div class="container" style="margin-top: 100px;padding-left: 250px;padding-right: 250px;" align="center">
-    <form [formGroup]="form" (submit)=onSaveProduct()>
-        <div class="form-row m-3">
-            <div class="col">
-                <input type="text" class="form-control" placeholder="Preference Name" formControlName="preference">
-            </div>
-        </div>
-        <div class="form-row m-3">
-            <div class="col">
-                <textarea rows="2" type="text" class="form-control" placeholder="Description" formControlName="description"></textarea>
-            </div>
-        </div>
-        
-        <div class="form-row m-3">
-            <div class="col">
-                <input type="text" class="form-control" placeholder="image URL" formControlName="images">
-            </div>
-        </div>
-        
+    <form [formGroup]="form" (submit)="onSavePlace()">
+        <div>
+            <select class="custom-select mb-3 form-control" name="placeType" id="placeType" formControlName="placeType">
+                <option  value="" disabled>--Select Preference--</option>
+                <option  *ngFor="let i of productDisplay">
+                  <div *ngFor="let j of i.ProductSchema" >
+                      {{j.title}}</div>
+                </option>
+            </select>
 
-        <div class="form-row m-3 justify-content-center">
-            <button type="submit" class="btn btn-lg text-white" style="background-color: midnightblue">Add Place</button>
-        </div>
+            <div class="input-group mb-3">
+                <input type="text " class="form-control border-left-0 " placeholder="Title" name="title" formControlName="title">
+            </div>
 
+            <div class="input-group mb-3">
+                <textarea rows="2" type="text " class="form-control border-left-0 " placeholder="Description" name="Description" id="Description" formControlName="Description"></textarea>
+            </div>
+
+            <div class="input-group mb-3">
+                <input type="text " class="form-control border-left-0 " placeholder="Image URL" name="image" id="image" formControlName="image">
+            </div>
+
+            <!-- <div class="input-group mb-3">
+                <select class="custom-select mb-3" name="seasonType" id="seasonType" required ngModel #seasonType="ngModel">
+                    <option  value="" disabled>--Select Season--</option>
+                    <option value="Spring">Spring</option>
+                    <option value="Summer">Summer</option>
+                    <option value="Monsoon">Monsoon</option>
+                    <option value="Autumn">Autumn</option>
+                    <option value="Pre-winter">Pre-winter</option>
+                    <option value="Winter">Winter</option>
+                </select>
+            </div> -->
+
+            <div class="input-group mb-3">
+                <input type="number" class="form-control border-left-0 " placeholder="Amount" name="amount" id="amount" formControlName="amount">
+            </div>
+            
+
+            <div class="input-group mb-3">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p>Select Seasons</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 d-flex flex-column align-items-center">
+                        <ul>
+                            <li align="center" class="mb-1">
+                                <label>Spring
+                                    <input type="checkbox" value="Spring" name="Spring" (click)="season($event)">
+                                    <span class="check"></span>
+                                </label>
+                            </li>
+                            <li align="center" class="mb-1">
+                                <label>Summer
+                                    <input type="checkbox" value="Summer" name="Summer" (click)="season($event)">
+                                    <span class="check"></span>
+                                </label>
+                            </li>
+                            <li align="center">
+                                <label>Monsoon
+                                    <input type="checkbox" value="Monsoon" name="Monsoon" (click)="season($event)">
+                                    <span class="check"></span>
+                                </label>
+                            </li>
+                            <li align="center">
+                                <label>Pre-winter
+                                    <input type="checkbox" value="Pre-winter" name="Pre-winter" (click)="season($event)">
+                                    <span class="check"></span>
+                                </label>
+                            </li>
+                            <li align="center">
+                                <label>Winter
+                                    <input type="checkbox" value="Winter" name="Winter" (click)="season($event)">
+                                    <span class="check"></span>
+                                </label>
+                            </li>
+                            <li align="center">
+                                <label>Autumn
+                                    <input type="checkbox" value="Autumn" name="Autumn" (click)="season($event)">
+                                    <span class="check"></span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+
+           
+            <div class="row d-flex flex-column align-items-center ">
+
+                <button type="submit" class="btn text-white btn-form my-4 " style="background-color: midnightblue">ADD PLACE</button>
+            </div>
+        </div>
     </form>
+    <app-view-places1-added></app-view-places1-added>
 </div>

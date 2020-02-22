@@ -1,0 +1,20 @@
+<p>places added are:</p>
+<div class="container-fluid shadow p-2 bg-white rounded mb-5" style="margin-top:4px" *ngFor="let i of placeDisplay">
+
+    
+    <div class="container-fluid card border-0" style=" margin-top:15px">
+        <div class="row">
+            <div class="col-4" *ngFor="let j of i.PlaceSchema">
+                <div class="d-flex flex-column align-items-center ">
+                    <h6 class="card-title">{{j.title}}</h6>
+                    <img class="card-img-top" style="margin-top: 20px;" src="{{j.image}}" alt="card image cap" height="170" width="150" >
+                    <div class="card-body d-flex flex-column align-items-center">
+                        <h6 class="card-text">{{j.season}}</h6>
+                        <h6 class="card-text">{{j.PlaceType}}</h6>
+                        <h6 class="card-text" style="color: midnightblue; font-weight: 750;">{{j.amount}}</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
